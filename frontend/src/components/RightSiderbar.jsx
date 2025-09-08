@@ -2,7 +2,7 @@ import React, { useMemo } from 'react'
 import { useSelector } from 'react-redux';
 
 function RightSiderbar() {
-  const { selectedUserSlice, onlineUers } = useSelector(state => state.user);
+  const { selectedUserSlice, onlineUsers } = useSelector(state => state.user);
   const { messages } = useSelector(state => state.message);
   const chatImages = useMemo(() => {
     return messages
@@ -20,7 +20,8 @@ function RightSiderbar() {
       <div className='pt-16 flex flex-col items-center gap-2 text-xs font-light mx-auto'>
         <img src={selectedUserSlice?.image  || assets.avatar_icon} alt="" className='w-20 aspect-[1/1] rounded-full' />
         <h1 className='px-10 text-xl font-medium mx-auto flex items-center gap-2'>
-          <p className='w-2 h-2 rounded-full bg-green-500'></p>
+          {onlineUsers?.includes(user._id) &&
+            <p className='w-2 h-2 rounded-full bg-green-500'></p>}
           {selectedUserSlice.fullName || selectedUserSlice?.name}
         </h1>
         <p className='px-10 mx-auto'>{selectedUserSlice.bio || "No bio available"}</p>
