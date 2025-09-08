@@ -93,7 +93,7 @@ function Login() {
   return (
     <div className='min-h-screen flex justify-center items-center bg-cover bg-center gap-8 sm:justify-evenly max-sm:flex-col backdrop-blur-2xl '>
       {/* left */}
-      <img src="./public/image.png" alt="" className='w-[min(30vw,3000px)] ' />
+      <img src="/image.png" alt="" className='w-[min(30vw,3000px)] ' />
       {/* right */}
       <form
         action=""
