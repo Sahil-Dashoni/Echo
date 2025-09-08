@@ -43,7 +43,7 @@ function App() {
     
   },[userData])
   return (
-    <div className="bg-[url('./public/8041907-Photoroom.png')] bg-no-repeat bg-center bg-cover">
+    <div className="bg-[url('/8041907-Photoroom.png')] bg-no-repeat bg-center bg-cover">
       <Routes>
         <Route path="/" element={userData ? <HomePage /> : <Navigate to="/login" />} />
         <Route path="/login" element={!userData ? <Login /> : <Navigate to="/" />} />
